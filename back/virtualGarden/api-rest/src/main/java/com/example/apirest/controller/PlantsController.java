@@ -37,7 +37,7 @@ public class PlantsController {
                 plantsRequestDTO, Plants.class
         );
         plantsService.createPlants(plants);
-        return ResponseEntity.ok( new PlantsResponseDTO());
+        return ResponseEntity.ok(modelMapper.map(plants, PlantsResponseDTO.class));
     }
 
     @GetMapping("")

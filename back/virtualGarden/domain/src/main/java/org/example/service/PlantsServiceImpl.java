@@ -53,7 +53,8 @@ public class PlantsServiceImpl implements PlantsService {
     }
 
     @Override
-    public List<Plants> getAllPlants() {
-        return null;
+    public List<Plants> getAllPlants()
+    {
+        return plantsRepository.findAll();
     }
 }
