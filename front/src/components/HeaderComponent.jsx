@@ -29,7 +29,7 @@ const HeaderComponent = () => {
                         {
                             isAuth &&                         
                             <li className='nav-item'>
-                            <NavLink to="/todos" className="nav-link">Todos</NavLink>
+                            <NavLink to="/todos" className="nav-link">Plants</NavLink>
                         </li>
                         }
 
