@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { registerAPICall } from '../services/AuthService'
+import {useNavigate} from "react-router-dom";
 
 const RegisterComponent = () => {
 
-    const [name, setName] = useState('')
     const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     
 
@@ -13,7 +12,7 @@ const RegisterComponent = () => {
 
         e.preventDefault();
 
-        const register = {name, username, email, password}
+        const register = {username, password}
 
         console.log(register);
 
@@ -36,20 +35,6 @@ const RegisterComponent = () => {
 
                     <div className='card-body'>
                         <form>
-                            <div className='row mb-3'>
-                                <label className='col-md-3 control-label'> Name </label>
-                                <div className='col-md-9'>
-                                    <input
-                                        type='text'
-                                        name='name'
-                                        className='form-control'
-                                        placeholder='Enter name'
-                                        value={name}
-                                        onChange={ (e) => setName(e.target.value)}
-                                    >
-                                    </input>
-                                </div>
-                            </div>
 
                             <div className='row mb-3'>
                                 <label className='col-md-3 control-label'> Username </label>
@@ -68,21 +53,6 @@ const RegisterComponent = () => {
 
 
                             <div className='row mb-3'>
-                                <label className='col-md-3 control-label'> Email </label>
-                                <div className='col-md-9'>
-                                    <input
-                                        type='text'
-                                        name='email'
-                                        className='form-control'
-                                        placeholder='Enter email address'
-                                        value={email}
-                                        onChange={ (e) => setEmail(e.target.value)}
-                                    >
-                                    </input>
-                                </div>
-                            </div>
-
-                            <div className='row mb-3'>
                                 <label className='col-md-3 control-label'> Password </label>
                                 <div className='col-md-9'>
                                     <input
@@ -98,7 +68,8 @@ const RegisterComponent = () => {
                             </div>
 
                             <div className='form-group mb-3'>
-                                <button className='btn btn-primary' onClick={ (e) => handleRegistrationForm(e)}>Submit</button>
+                                <button className='btn btn-primary' onClick={ (e) =>  handleRegistrationForm(e)}
+                                >Submit</button>
 
                             </div>
                         </form>

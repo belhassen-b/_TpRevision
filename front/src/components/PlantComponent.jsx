@@ -11,7 +11,7 @@ const PlantComponent = () => {
     const [image, setImage] = useState('')
     const [scientificName, setScientificName] = useState('')
     const [family, setFamily] = useState('')
-    const [platsDryingLevel, setPlatsDryingLevel] = useState('')
+    const [plantsDryingLevel, setPlantsDryingLevel] = useState('')
     const navigate = useNavigate()
     const { id } = useParams()
 
@@ -19,7 +19,7 @@ const PlantComponent = () => {
     function saveOrUpdatePlant(e){
         e.preventDefault()
 
-        const plant = {name, description, image, scientificName, family, platsDryingLevel}
+        const plant = {name, description, image, scientificName, family, plantsDryingLevel}
         console.log(plant);
 
         if(id){
@@ -59,7 +59,7 @@ const PlantComponent = () => {
                     setImage(plant.image)
                     setScientificName(plant.scientificName)
                     setFamily(plant.family)
-                    setPlatsDryingLevel(plant.platsDryingLevel)
+                    setPlantsDryingLevel(plant.plantsDryingLevel)
             }).catch(error => {
                 console.error(error);
             })
@@ -82,7 +82,7 @@ const PlantComponent = () => {
                                 className='form-control'
                                 placeholder='Enter Plant Name'
                                 name='Name'
-                                value={Name}
+                                value={name}
                                 onChange={(e) => setName(e.target.value)}
                             >
                             </input>
@@ -147,8 +147,8 @@ const PlantComponent = () => {
                             <select
                                 className='form-control'
                                 name='platsDryingLevel'
-                                value={platsDryingLevel}
-                                onChange={(e) => setPlatsDryingLevel(e.target.value)}
+                                value={plantsDryingLevel}
+                                onChange={(e) => setPlantsDryingLevel(e.target.value)}
                             >
                                 <option value=''>Select Drying Level</option>
                                 <option value='LOW'>Low</option>

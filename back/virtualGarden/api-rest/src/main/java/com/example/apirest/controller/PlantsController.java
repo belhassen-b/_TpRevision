@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/api/plants")
+@CrossOrigin("*")
 @RestController
 public class PlantsController {
 

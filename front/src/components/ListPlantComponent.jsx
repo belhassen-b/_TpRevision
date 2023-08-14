@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const ListPlantComponent = () => {
 
-    const [todos, setTodos] = useState([])
+    const [plants, setPlants] = useState([])
 
     const navigate = useNavigate()
 
@@ -63,24 +63,31 @@ const ListPlantComponent = () => {
             <table className='table table-bordered table-striped'>
                 <thead>
                     <tr>
-                        <th>Plant Title</th>
+                        <th>Plant Name</th>
                         <th>Plant Description</th>
-                        <th>Plant  Completed</th>
+                        <th>Plant  Image</th>
+                        <th>Plant Scientific Name</th>
+                        <th>Plant Family</th>
+                        <th>Plant Drying Level</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        todos.map(plant =>
+                        plants.map(plant =>
                             <tr key={plant.id}>
-                                <td>{plant.title}</td>
+                                <td>{plant.name}</td>
                                 <td>{plant.description}</td>
-                                <td>{plant.completed ? 'YES': 'NO'}</td>
+                                <td>{plant.image}</td>
+                                <td>{plant.scientificName}</td>
+                                <td>{plant.family}</td>
+                                <td>{plant.plantsDryingLevel}</td>
+                                {/*<td>{plant.completed ? 'YES': 'NO'}</td>*/}
                                 <td>
                                     <button className='btn btn-info' onClick={() => updatePlant(plant.id)}>Update</button>
                                     <button className='btn btn-danger' onClick={() => removePlant(plant.id)} style={ { marginLeft: "10px" }} >Delete</button>
-                                    <button className='btn btn-success' onClick={() => markCompletePlant(plant.id)} style={ { marginLeft: "10px" }} >Complete</button>
-                                    <button className='btn btn-info' onClick={() => markInCompletePlant(plant.id)} style={ { marginLeft: "10px" }} >InComplete</button>
+                                    {/*<button className='btn btn-success' onClick={() => markCompletePlant(plant.id)} style={ { marginLeft: "10px" }} >Complete</button>*/}
+                                    {/*<button className='btn btn-info' onClick={() => markInCompletePlant(plant.id)} style={ { marginLeft: "10px" }} >InComplete</button>*/}
                                 </td>
                             </tr>
                         )

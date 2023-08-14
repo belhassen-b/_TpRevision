@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/api/comments")
+@CrossOrigin("*")
 @RestController
 public class CommentsController {
 
