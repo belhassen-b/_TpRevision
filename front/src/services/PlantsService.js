@@ -1,20 +1,25 @@
 import axios from "axios";
 import { getToken } from "./AuthService";
-import { bearerToken } from "./AuthService";
 
 const BASE_REST_API_URL = 'http://localhost:8081/api/plants';
 
 
 
 axios.interceptors.request.use(function (config) {
+    config.headers['Authorization'] = getToken();
 
-    const token = getToken();
-    const auth = bearerToken();
-    config.headers.Authorization = auth;
-    return config
+
+
+    return config;
+
 }, function (error) {
+
+
+
     return Promise.reject(error);
+
 });
+
 
 export const getAllPlants = () => axios.get(BASE_REST_API_URL)
 

@@ -8,7 +8,6 @@ export const loginAPICall = (username, password) => axios.post(AUTH_REST_API_BAS
 
 export const storeToken = (token) => localStorage.setItem("token", token);
 
-export const bearerToken = () => "Bearer " + localStorage.getItem("token");
 
 export const getToken = () => localStorage.getItem("token");
 

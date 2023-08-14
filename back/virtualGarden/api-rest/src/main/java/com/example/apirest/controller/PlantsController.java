@@ -6,20 +6,24 @@ import com.example.apirest.dto.response.PlantsResponseDTO;
 import org.example.entity.Plants;
 import org.example.port.service.PlantsService;
 import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/api/plants")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 @RestController
 public class PlantsController {
 
     private final PlantsService plantsService;
 
     private final ModelMapper modelMapper;
+
 
     public PlantsController(PlantsService plantsService, ModelMapper modelMapper) {
         this.plantsService = plantsService;

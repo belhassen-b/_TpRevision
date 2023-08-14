@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.entity.enumeration.PlantsDryingLevel;
 
 @Builder
 @NoArgsConstructor
@@ -16,5 +17,5 @@ public class PlantsResponseDTO {
     private String plantsImage;
     private String plantsScientificName;
     private String plantsFamily;
-    private Enum plantsDryingLevel;
+    private PlantsDryingLevel plantsDryingLevel;
 }
